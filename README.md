@@ -54,7 +54,7 @@ El sistema sigue una arquitectura de carpetas limpia y organizada:
     * Importa el archivo `database/archivex_db(vacio).sql`.
 3.  **Configuración:** * Ajusta las credenciales de conexión en `app/config/config.php`.
 4.  **Acceso:**
-    * Apunta tu servidor local a la carpeta del proyecto y accede vía: `http://localhost/archivex/public/`.
+    * Apunta tu servidor local a la carpeta del proyecto y accede vía: `http://localhost/archivex`.
 
 ---
 
