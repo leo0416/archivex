@@ -1,0 +1,4 @@
+RewriteEngine On
+# Redirigir a la carpeta public
+RewriteRule ^$ public/index.php [L]
+RewriteRule ^((?!public/).*)$ public/index.php?url=$1 [L,QSA]
