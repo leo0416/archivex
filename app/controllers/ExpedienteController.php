@@ -22,11 +22,16 @@ class ExpedienteController {
                 exit;
             }
 
-            // Consulta completa uniendo militante, ubicación y estante
-            $sql = "SELECT m.*, e.numero_consecutivo as num_estante, u.cajuela, u.posicion_global 
+            // Consulta completa uniendo militante, ubicación, estante y NÚCLEO
+            $sql = "SELECT m.*, 
+                           e.numero_consecutivo as num_estante, 
+                           u.cajuela, 
+                           u.posicion_global,
+                           n.nombre as nombre_nucleo
                     FROM militantes m
                     LEFT JOIN ubicaciones u ON m.ubicacion_id = u.id
                     LEFT JOIN estantes e ON u.estante_id = e.id
+                    LEFT JOIN nucleos n ON m.nucleo_id = n.id
                     WHERE m.id = ? AND m.deleted_at IS NULL";
             
             $stmt = $this->db->prepare($sql);
@@ -34,7 +39,6 @@ class ExpedienteController {
             $militante = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if (!$militante) {
-                // Si no existe, enviamos al dashboard con error en lugar de un die() para no romper la UI
                 header("Location: index.php?controller=dashboard&action=index&error=no_existe");
                 exit;
             }
@@ -47,7 +51,6 @@ class ExpedienteController {
             require_once __DIR__ . '/../../views/layout/main.php';
 
         } catch (Exception $e) {
-            // Logueamos también el error técnico si ocurre
             Logger::log("Error al intentar ver expediente ID $id: " . $e->getMessage());
             die("Error al cargar el expediente: " . $e->getMessage());
         }

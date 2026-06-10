@@ -164,6 +164,7 @@
             <a href="index.php?controller=dashboard" class="menu-item"><i class="fas fa-chart-line"></i> Inicio</a>
             <a href="index.php?controller=militante&action=nuevo" class="menu-item"><i class="fas fa-file-medical"></i> Nuevo</a>
             <a href="index.php?controller=estante" class="menu-item"><i class="fas fa-boxes"></i> Estantes</a>
+            <a href="index.php?controller=nucleo&action=index" class="menu-item"><i class="fas fa-layer-group"></i> Núcleos</a>
             <a href="index.php?controller=papelera&action=index" class="menu-item"><i class="fas fa-trash-restore"></i> Papelera</a>
             
             <a href="index.php?controller=ayuda&action=index" class="menu-item menu-ayuda">

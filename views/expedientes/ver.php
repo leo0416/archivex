@@ -171,6 +171,7 @@
             <div class="card-ficha">
                 <div class="card-title"><i class="fas fa-briefcase"></i> Información Política y Laboral</div>
                 <div class="info-row"><div class="info-label">Ingreso PCC:</div><div class="info-value"><?php echo date('d/m/Y', strtotime($militante['fecha_pcc'])); ?></div></div>
+                <div class="info-row"><div class="info-label">Núcleo de Base:</div><div class="info-value"><?php echo htmlspecialchars($militante['nombre_nucleo'] ?? 'Sin asignar'); ?></div></div>
                 <div class="info-row"><div class="info-label">Centro Trabajo:</div><div class="info-value"><?php echo htmlspecialchars($militante['centro_trabajo']); ?></div></div>
                 <div class="info-row"><div class="info-label">Cargo:</div><div class="info-value"><?php echo htmlspecialchars($militante['cargo']); ?></div></div>
                 <div class="info-row"><div class="info-label">Escolaridad:</div><div class="info-value"><?php echo $militante['nivel_escolar']; ?> <?php echo !empty($militante['graduado_de']) ? '('.htmlspecialchars($militante['graduado_de']).')' : ''; ?></div></div>
